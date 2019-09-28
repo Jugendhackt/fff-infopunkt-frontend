@@ -1,12 +1,12 @@
 <template>
 <li>
-    <div class="Datum"> 20.09.2019 </div>
-    <h2><span class="Gruppenname"> Fridays for Future </span>Demo</h2>
+    <div class="Datum">{{ datetime }}</div>
+    <h2><span class="Gruppenname">{{ event }}</span>Demo</h2>
     <ul>
-        <li> <strong>Treffpunkt</strong> Alte Oper</li>
-        <li> <strong>Start</strong> 12 Uhr</li>
-        <li> <strong>Ziel</strong> Römerplatz</li>
-        <li> <strong>Strecke</strong> 3km</li>
+        <li> <strong>Treffpunkt: </strong>{{ treffpunkt }}</li>
+        <li> <strong>Start: </strong>{{ start }}</li>
+        <li> <strong>Ziel: </strong>{{ ziel }}</li>
+        <li v-if="strecke"> <strong>Routenlänge: </strong>{{ strecke }}</li>
     </ul>
 </li>
     
@@ -17,7 +17,12 @@
 export default {
   name: 'ListItem',
   props: {
-    msg: String
+    datetime: String,
+    event: String,
+    treffpunkt: String,
+    start: String,
+    ziel: String,
+    strecke: String
   }
 }
 </script>

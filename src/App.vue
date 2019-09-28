@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    <Startseite msg="Hallo Leute!"/>
-    <ul>
-    <ListItem/>
-    </ul>
+    <Startseite/>
   </div>
 </template>
 
 <script>
-import ListItem from './components/ListItem.vue'
 import Startseite from './components/Startseite.vue'
 
 export default {
   name: 'app',
   components: {
-    ListItem,
     Startseite
   }
 }
