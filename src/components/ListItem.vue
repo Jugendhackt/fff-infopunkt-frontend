@@ -37,11 +37,17 @@ export default {
     li {
         background-color: white;
         padding: 5px;
+		padding-left: 0px;
     }
     li.event {
-        margin-left: 100px;
 		margin-bottom: 35px;
+		margin-left: 100px;
 	}
+	@media screen and (max-width: 715px) {
+		li.event {
+			margin-left: 8%;
+		}
+    }
     .Datum {
         font-weight:bold;
         color:black
@@ -54,7 +60,6 @@ export default {
         text-align: left
     }
     h2 {
-        margin-top: 0;
-        margin-bottom: 0.2em;
+        margin: 0.1em 0;
     }
 </style>

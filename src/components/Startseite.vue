@@ -55,18 +55,28 @@ div.head, div.color {
 }
 div.head {
 	margin-bottom: 40px;
+	padding: 0 15px;
 }
 h1, h2 {
     text-align: center;
 }
 h1 {
+	font-size: 3em;
     margin: 0;
 	padding-top: 50px;
 }
 h2 {
+	font-weight: normal;
     margin: 0;
-	margin-top: 15px;
-    width: 100%;
+	margin-top: 8px;
+}
+@media screen and (max-width: 485px) {
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		margin-top: 13px;
+	}
 }
 div.color {
     overflow: hidden;
