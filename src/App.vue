@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <Startseite/>
   </div>
 </template>
@@ -18,6 +19,7 @@ export default {
 <style>
 body {
   margin: 0;
+  font-family: Roboto, Arial, sans-serif;
 }
 /*#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

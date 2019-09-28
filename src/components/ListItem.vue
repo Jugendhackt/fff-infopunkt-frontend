@@ -5,8 +5,8 @@
     <ul>
         <li> <strong>Treffpunkt:</strong> {{ treffpunkt }}</li>
         <li> <strong>Start:</strong> {{ time }}</li>
-        <li> <strong>Ziel:</strong> {{ ziel }}</li>
-        <li v-if="strecke"><strong>Routenlänge:</strong> {{ strecke }}</li>
+        <li v-if="ziel && ziel.trim()"> <strong>Ziel:</strong> {{ ziel }}</li>
+        <li v-if="strecke && strecke.trim()"><strong>Routenlänge:</strong> {{ strecke }}</li>
     </ul>
 </li>
     
@@ -40,8 +40,8 @@ export default {
     }
     li.event {
         margin-left: 100px;
-	    margin-bottom: 10px;
-    }
+		margin-bottom: 35px;
+	}
     .Datum {
         font-weight:bold;
         color:black

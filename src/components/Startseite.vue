@@ -1,10 +1,9 @@
 <template>
   <div class="hello">
-      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
       <div class="head">
         <h1>Politischer Infopoint</h1>
+        <h2>Finde Demos &amp; Aktionen in deiner Nähe!</h2>
       </div>
-      <h2>Finde Demos &amp; Aktionen in deiner Nähe!</h2>
       <div class="color">
         <img src="../assets/Bild_Demo.jpg" alt="eine demo von fridays for future"/>
       </div>
@@ -35,10 +34,7 @@ export default {
   name: 'Startseite',
   data() {return {
       items: [
-          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"},
-          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"},
-          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}
-        ]
+          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}]
   }},
   created () {
       fetchData(this)
@@ -54,32 +50,28 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div.head, div.color {
+	height: 180px;
+}
 div.head {
-    height: 80px;
+	margin-bottom: 40px;
 }
 h1, h2 {
     text-align: center;
-    font-family: "PT Serif", serif;
 }
 h1 {
-    line-height: 80px;
     margin: 0;
+	padding-top: 50px;
 }
 h2 {
     margin: 0;
+	margin-top: 15px;
     width: 100%;
-    z-index: 1;
-    height: 100px;
-    position: absolute;
-    line-height: 100px;
-}
-div.color, div.head {
-    background: #45d94d;
 }
 div.color {
-    height: 100px;
     overflow: hidden;
-    top: 80px;
+    top: 0px;
+	position: absolute;
     z-index: -1;
 }
 img {
