@@ -22,13 +22,17 @@ import ListItem from './ListItem.vue'
 export default {
   name: 'Startseite',
   data() {return {
-      items: [{"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}]
+      items: [
+          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"},
+          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"},
+          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}
+        ]
   }},
   created () {
     axios
       .get('https://api.fffinfo.de/strikes/all')
       .then(response => {
-          this.items = response.data.items
+          //this.items = response.data.items
           console.log(JSON.stringify(response.data.items[0]))
       })
   },
@@ -43,14 +47,6 @@ export default {
 div.head {
     height: 80px;
 }
-img {
-    width: 100%;
-    height: auto;
-    opacity: 0.8;
-    position: absolute;
-    top: 80px;
-    z-index: -1;
-}
 h1, h2 {
     text-align: center;
     font-family: "PT Serif", serif;
@@ -60,11 +56,25 @@ h1 {
     margin: 0;
 }
 h2 {
-    margin-top: 150px;
+    margin: 0;
     width: 100%;
     z-index: 1;
+    height: 100px;
+    position: absolute;
+    line-height: 100px;
 }
 div.color, div.head {
     background: #45d94d;
+}
+div.color {
+    height: 100px;
+    overflow: hidden;
+    top: 80px;
+    z-index: -1;
+}
+img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
 }
 </style>
