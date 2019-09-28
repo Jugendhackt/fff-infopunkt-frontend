@@ -1,10 +1,10 @@
 <template>
 <li class="event">
-    <div class="Datum">{{ datetime }}</div>
-    <h2><span class="Gruppenname">{{ event }}</span> Demo</h2>
+    <div class="Datum">{{ date }}</div>
+    <h2><span class="Gruppenname">{{ event }}</span> {{ titel }}</h2>
     <ul>
         <li> <strong>Treffpunkt:</strong> {{ treffpunkt }}</li>
-        <li> <strong>Start:</strong> {{ start }}</li>
+        <li> <strong>Start:</strong> {{ time }}</li>
         <li> <strong>Ziel:</strong> {{ ziel }}</li>
         <li v-if="strecke"><strong>Routenlänge:</strong> {{ strecke }}</li>
     </ul>
@@ -17,12 +17,13 @@
 export default {
   name: 'ListItem',
   props: {
-    datetime: String,
+    date: String,
     event: String,
     treffpunkt: String,
-    start: String,
+    time: String,
     ziel: String,
-    strecke: String
+    strecke: String,
+    titel: String
   }
 }
 </script>

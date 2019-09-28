@@ -10,7 +10,7 @@
       </div>
       <ul>
         <div v-for="item in items">
-          <ListItem :datetime="item.datetime" :event="item.title" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :strecke="item.routeLength"/>
+          <ListItem :date="item.date" :event="item.organisation" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :time="item.startTime" :strecke="item.routeLength" :titel="item.title"/>
         </div>
       </ul>
   </div>
@@ -19,6 +19,18 @@
 <script>
 import axios from 'axios'
 import ListItem from './ListItem.vue'
+
+
+function fetchData(con) {
+  axios
+    .get('https://api.fffinfo.de/strikes/all')
+    .then(response => {
+        con.items = response.data.items
+        console.log(JSON.stringify(response.data.items[0]))
+        console.log(JSON.stringify(response))
+    })
+}
+
 export default {
   name: 'Startseite',
   data() {return {
@@ -29,12 +41,10 @@ export default {
         ]
   }},
   created () {
-    axios
-      .get('https://api.fffinfo.de/strikes/all')
-      .then(response => {
-          //this.items = response.data.items
-          console.log(JSON.stringify(response.data.items[0]))
-      })
+      fetchData(this)
+      setInterval(() => {
+          fetchData(this)
+      }, 10000, 0)
   },
   components: {
     ListItem
