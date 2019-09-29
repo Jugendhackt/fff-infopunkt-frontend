@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <button v-on:click="menuAction">Menu</button>
     <Startseite/>
   </div>
 </template>
@@ -12,6 +13,11 @@ export default {
   name: 'app',
   components: {
     Startseite
+  },
+  methods: {
+    menuAction: function() {
+      alert("Über uns:\n\nWir sind eine Gruppe von 'JugendHackt', die es sich zur Aufgabe gemacht hat, Schülern von überall her FFF-Demos in ihrer Nähe anzuzeigen. Dadurch kann sich jeder bei Interesse beteiligen!")
+    }
   }
 }
 </script>
