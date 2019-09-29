@@ -54,13 +54,13 @@ export default {
 		padding-left: 0px;
     }
     div.event {
-		margin-bottom: 35px;
-		margin-left: 100px;
+	margin-bottom: 35px;
+	margin-left: 100px;
+    }
+    @media screen and (max-width: 715px) {
+	div.event {
+	    margin-left: 8%;
 	}
-	@media screen and (max-width: 715px) {
-		li.event {
-			margin-left: 8%;
-		}
     }
     p {
         margin: 0;

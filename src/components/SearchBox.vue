@@ -40,6 +40,8 @@ export default {
     margin: 1.8em auto 1.2em auto;
     display: flex;
     justify-content: center;
+    width: 70%;
+    max-width: 300px;
 }
 button {
     background: white;
