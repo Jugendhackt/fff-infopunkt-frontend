@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
       <div class="head">
-        <h1>Politischer Infopoint</h1>
+        <h1><img class="logo" src="../assets/logo.png">Politischer Infopoint</h1>
         <h2>Finde Demos &amp; Aktionen in deiner Nähe!</h2>
 		<SearchBox/>
       </div>
@@ -87,5 +87,12 @@ img {
     width: 100%;
     height: auto;
     opacity: 0.8;
+}
+.logo {
+  height: 1.2em;
+  width: auto;
+  opacity: 1;
+  margin-bottom: -0.2em;
+  margin-right: 0.1em;
 }
 </style>
