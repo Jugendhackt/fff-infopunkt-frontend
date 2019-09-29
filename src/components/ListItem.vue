@@ -7,6 +7,7 @@
         <li> <strong>Start:</strong> {{ time }}</li>
         <li v-if="ziel && ziel.trim()"> <strong>Ziel:</strong> {{ ziel }}</li>
         <li v-if="strecke && strecke.trim()"><strong>Routenlänge:</strong> {{ strecke }}</li>
+	<li><a>weitere Infos...</a></li>
     </ul>
 </li>
     

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <Startseite/>
   </div>
 </template>

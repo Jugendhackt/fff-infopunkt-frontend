@@ -20,15 +20,7 @@ import axios from 'axios'
 import ListItem from './ListItem.vue'
 
 
-function fetchData(con) {
-  axios
-    .get('https://api.fffinfo.de/strikes/all')
-    .then(response => {
-        con.items = response.data.items
-        console.log(JSON.stringify(response.data.items[0]))
-        console.log(JSON.stringify(response))
-    })
-}
+
 
 export default {
   name: 'Startseite',
@@ -37,10 +29,21 @@ export default {
           {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}]
   }},
   created () {
-      fetchData(this)
-      setInterval(() => {
-          fetchData(this)
-      }, 10000, 0)
+    this.fetchData()
+    setInterval(() => {
+        this.fetchData()
+    }, 10000, 0)
+	},
+  methods: {
+	 fetchData: function() {
+     axios
+      .get('https://api.fffinfo.de/strikes/all')
+      .then(response => {
+          this.items = response.data.items
+          console.log(JSON.stringify(response.data.items[0]))
+          console.log(JSON.stringify(response))
+      })
+    }
   },
   components: {
     ListItem
