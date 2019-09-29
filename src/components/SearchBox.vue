@@ -1,8 +1,8 @@
 <template>
-<div class="inline">
-	<input type="text" v-model="searchterm" placeholder="Stadt"> </input>
+<form class="inline" v-on:submit.prevent="submit">
+	<input type="text" v-model="searchterm" placeholder="Stadt"/>
 	<button>🔍</button>
-</div>
+</form>
 </template>
 
 
@@ -10,11 +10,15 @@
 export default {
   name: 'SearchBox',
   data() { return {
-    show: false
+    show: false,
+    searchterm: ''
   }},
   methods: {
     loadinfo: function() {
       this.show = true;
+    },
+    submit: function() {
+      console.debug("search: " + this.searchterm)
     }
   },
   props: {
