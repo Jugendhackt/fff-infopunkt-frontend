@@ -57,8 +57,16 @@ input {
     padding: 4px 12px;
     border-radius: 8px 0px 0px 8px;
     border: none;
+    min-width: 340px;
 }
-
+@media screen and (max-width: 440px) {
+    .inline {
+	max-width: 260px;
+    }
+    input {
+        min-width: 180px;
+    }
+}
 input:focus, button:focus {
     outline: none;
 }
