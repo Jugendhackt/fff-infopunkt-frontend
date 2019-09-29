@@ -1,6 +1,9 @@
 <template>
 <div class="event">
-    <div class="Datum">{{ date }}</div>
+    <div class="header">
+        <div class="Datum">{{ date }}</div>
+        <p class="source">Quelle: {{ quelle }}</p>
+    </div>
     <h2><a class="Gruppenname" :href="orgurl">{{ org }}</a> {{ titel }}</h2>
     <ul>
         <li> <strong>Treffpunkt:</strong> {{ treffpunkt }}</li>
@@ -34,7 +37,8 @@ export default {
     ziel: String,
     strecke: String,
     titel: String,
-    beschreibung: String
+    beschreibung: String,
+    quelle: String
   }
 }
 </script>
@@ -51,7 +55,7 @@ export default {
     }
     li {
         background-color: white;
-        padding: 5px;
+        padding: 2px;
 		padding-left: 0px;
     }
     div.event {
@@ -63,8 +67,16 @@ export default {
 	    margin-left: 8%;
 	}
     }
+    div.header * {
+        display: inline-block;
+    }
     p {
         margin: 0;
+    }
+    p.source {
+        color: #555;
+        font-size: 10pt;
+        margin-left: 40px;
     }
     .Datum {
         font-weight:bold;
