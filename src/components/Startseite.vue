@@ -3,13 +3,11 @@
       <div class="head">
         <h1>Politischer Infopoint</h1>
         <h2>Finde Demos &amp; Aktionen in deiner Nähe!</h2>
-      </div>
-      <div class="color">
-        <img src="../assets/Bild_Demo.jpg" alt="eine demo von fridays for future"/>
+		<SearchBox/>
       </div>
       <ul>
         <div v-for="item in items">
-          <ListItem :date="item.date" :event="item.organisation" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :time="item.startTime" :strecke="item.routeLength" :titel="item.title"/>
+          <ListItem :date="item.date" :event="item.organisation" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :time="item.startTime" :strecke="item.routeLength" :titel="item.title" :beschreibung="item.description"/>
         </div>
       </ul>
   </div>
@@ -18,9 +16,7 @@
 <script>
 import axios from 'axios'
 import ListItem from './ListItem.vue'
-
-
-
+import SearchBox from './SearchBox.vue'
 
 export default {
   name: 'Startseite',
@@ -40,24 +36,25 @@ export default {
       .get('https://api.fffinfo.de/strikes/all')
       .then(response => {
           this.items = response.data.items
-          console.log("fetched data: " + JSON.stringify(response.data.items))
+          console.debug("fetched data: " + JSON.stringify(this.items))
+		  console.debug(this.items)
       })
     }
   },
   components: {
-    ListItem
+    ListItem,
+	SearchBox
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div.head, div.color {
-	height: 180px;
-}
 div.head {
 	margin-bottom: 40px;
-	padding: 0 15px;
+	padding: 0 15px 1em 15px;
+	background-size: cover;
+	background-image: url('../assets/Bild_Demo.jpg');
 }
 h1, h2 {
     text-align: center;

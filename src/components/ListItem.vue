@@ -1,5 +1,5 @@
 <template>
-<li class="event">
+<div class="event">
     <div class="Datum">{{ date }}</div>
     <h2><span class="Gruppenname">{{ event }}</span> {{ titel }}</h2>
     <ul>
@@ -7,16 +7,24 @@
         <li> <strong>Start:</strong> {{ time }}</li>
         <li v-if="ziel && ziel.trim()"> <strong>Ziel:</strong> {{ ziel }}</li>
         <li v-if="strecke && strecke.trim()"><strong>Routenlänge:</strong> {{ strecke }}</li>
-	<li><a>weitere Infos...</a></li>
+	<li><a v-if="!show" v-on:click="loadinfo()">weitere Infos...</a></li>
     </ul>
-</li>
-    
+    <p v-if="show">{{ beschreibung }}</p>
+</div>
 </template>
 
 
 <script>
 export default {
   name: 'ListItem',
+  data() { return {
+    show: false
+  }},
+  methods: {
+    loadinfo: function() {
+      this.show = true;
+    }
+  },
   props: {
     date: String,
     event: String,
@@ -24,13 +32,18 @@ export default {
     time: String,
     ziel: String,
     strecke: String,
-    titel: String
+    titel: String,
+    beschreibung: String
   }
 }
 </script>
 
 
-<style>
+<style scoped>
+    a {
+        color: blue;
+        cursor: pointer;
+    }
     ul {
         padding-left: 0px;
         list-style-type: none;
@@ -40,14 +53,17 @@ export default {
         padding: 5px;
 		padding-left: 0px;
     }
-    li.event {
-		margin-bottom: 35px;
-		margin-left: 100px;
+    div.event {
+	margin-bottom: 35px;
+	margin-left: 100px;
+    }
+    @media screen and (max-width: 715px) {
+	div.event {
+	    margin-left: 8%;
 	}
-	@media screen and (max-width: 715px) {
-		li.event {
-			margin-left: 8%;
-		}
+    }
+    p {
+        margin: 0;
     }
     .Datum {
         font-weight:bold;
