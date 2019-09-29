@@ -3,10 +3,10 @@
       <div class="head">
         <h1>Politischer Infopoint</h1>
         <h2>Finde Demos &amp; Aktionen in deiner Nähe!</h2>
-		<SearchBox/>
+		<SearchBox v-on:searched="searched = true"/>
       </div>
       <ul>
-        <div v-for="item in items">
+        <div v-if="searched" v-for="item in items">
           <ListItem :date="item.date" :event="item.organisation" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :time="item.startTime" :strecke="item.routeLength" :titel="item.title" :beschreibung="item.description"/>
         </div>
       </ul>
@@ -22,7 +22,8 @@ export default {
   name: 'Startseite',
   data() {return {
       items: [
-          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}]
+          {"datetime":"Datum und Uhrzeit","meetingPoint":"Startpunkt / Treffpunkt","searchTitle":"titel","routeLength":"Routenlänge","longitude":0,"source":"Telegram chat group, collected bei FFF_Info Bot","description":"Beschreibung","url":"Website Veranstalter","latitude":0,"strikeId":3,"endPoint":"Endpunkt","title":"Titel"}],
+	  searched: false
   }},
   created () {
     this.fetchData()

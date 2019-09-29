@@ -19,6 +19,7 @@ export default {
     },
     submit: function() {
       console.debug("search: " + this.searchterm)
+      this.$emit('searched')
     }
   },
   props: {
