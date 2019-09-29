@@ -7,7 +7,7 @@
       </div>
       <ul>
         <div v-if="searched" v-for="item in items">
-          <ListItem :date="item.date" :event="item.organisation" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :time="item.startTime" :strecke="item.routeLength" :titel="item.title" :beschreibung="item.description"/>
+          <ListItem :date="item.date" :org="item.organisation" :orgurl="item.url" :treffpunkt="item.meetingPoint" :ziel="item.endPoint" :time="item.startTime" :strecke="item.routeLength" :titel="item.title" :beschreibung="item.description"/>
         </div>
       </ul>
   </div>

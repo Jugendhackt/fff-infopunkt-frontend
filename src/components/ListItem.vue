@@ -1,7 +1,7 @@
 <template>
 <div class="event">
     <div class="Datum">{{ date }}</div>
-    <h2><span class="Gruppenname">{{ event }}</span> {{ titel }}</h2>
+    <h2><a class="Gruppenname" :href="orgurl">{{ org }}</a> {{ titel }}</h2>
     <ul>
         <li> <strong>Treffpunkt:</strong> {{ treffpunkt }}</li>
         <li> <strong>Start:</strong> {{ time }}</li>
@@ -27,7 +27,8 @@ export default {
   },
   props: {
     date: String,
-    event: String,
+    org: String,
+    orgurl: String,
     treffpunkt: String,
     time: String,
     ziel: String,
@@ -71,7 +72,11 @@ export default {
     }
     .Gruppenname {
         color: #45d94d;
+	text-decoration: none;
         font-size: 20pt;
+    }
+    .Gruppenname:hover {
+	text-decoration: underline;
     }
     strong {
         text-align: left
