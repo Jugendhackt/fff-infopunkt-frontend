@@ -40,5 +40,9 @@ body {
 <style scoped>
 button {
   position: absolute;
+  background: white;
+  border: none;
+  height: 2em;
+  border-radius: 0 0 5px 0;
 }
 </style>
