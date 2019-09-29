@@ -40,8 +40,7 @@ export default {
       .get('https://api.fffinfo.de/strikes/all')
       .then(response => {
           this.items = response.data.items
-          console.log(JSON.stringify(response.data.items[0]))
-          console.log(JSON.stringify(response))
+          console.log("fetched data: " + JSON.stringify(response.data.items))
       })
     }
   },
