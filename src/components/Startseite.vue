@@ -29,7 +29,7 @@ export default {
     this.fetchData()
     setInterval(() => {
         this.fetchData()
-    }, 10000, 0)
+    }, 4000, 0)
 	},
   methods: {
 	 fetchData: function() {
