@@ -1,5 +1,7 @@
 # fff-infopunkt-frontend
 
+![logo](/src/assets/logo.png)
+
 Die Webseite, um regional politisch aktiv zu sein
 
 ## Project setup (Vue)
