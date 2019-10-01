@@ -1,5 +1,5 @@
 # fff-infopunkt-frontend
-[![Jugendhackt](https://jhbadge.com/?year=2019&evt=ffm)](https://jugendhackt.org)
+[![Jugendhackt](https://jhbadge.com/?year=2019&evt=ffm)](https://jugendhackt.org) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ![logo](/src/assets/logo.png)
 
