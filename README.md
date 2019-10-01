@@ -1,4 +1,5 @@
 # fff-infopunkt-frontend
+[![Jugendhackt](https://jhbadge.com/?year=2019&evt=ffm)](https://jugendhackt.org)
 
 ![logo](/src/assets/logo.png)
 
